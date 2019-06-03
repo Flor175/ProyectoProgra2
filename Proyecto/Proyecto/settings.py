@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+cx*b71lo$a+)2x&0&&nd-4m+rwojbj9!5*sjmk#5qt*ri23ow'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['157.230.54.103']
 
@@ -51,12 +51,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Practica2.urls'
+ROOT_URLCONF = 'Proyecto.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Practica2/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'Proyecto/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Practica2.wsgi.application'
+WSGI_APPLICATION = 'Proyecto.wsgi.application'
 
 
 # Database
@@ -132,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 
 LOGIN_URL = '/iniciar-sesion/'
 LOGOUT_URL = '/cerrar-sesion/'
@@ -149,10 +149,10 @@ PASSWORD_RESET_TIMEOUT = 600
 MEDIA_URL = '/Archivos_Subidos/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Archivos_Subidos')
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "Practica2/templates/static"),
     ("automatas", os.path.join(BASE_DIR, "Archivos/static")),
-)
+]
 
 
 
